@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Chanthy Chet</title>
+    <link rel="stylesheet" href="../css/skills.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Chanthy<span>Chet</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html" class="active">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>`n            <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <section class="skills-hero">
+        <div class="container">
+            <h1>My Skills</h1>
+            <p>Technical & Soft Skills</p>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <!-- 1. Backend Development -->
+            <h2>Backend Skills</h2>
+            <div class="skills-grid" id="backendSkills"></div>
+
+            <!-- 2. Frontend Development -->
+            <h2>Frontend Skills</h2>
+            <div class="skills-grid" id="frontendSkills"></div>
+
+            <!-- 3. Testing Skills -->
+            <h2>Testing Skills</h2>
+            <div class="skills-grid" id="testingSkills"></div>
+
+            <!-- 4. Development Tools -->
+            <h2>Development Tools</h2>
+            <div class="skills-grid" id="devTools"></div>
+
+            <!-- 5. Productivity Tools -->
+            <h2>Productivity Tools</h2>
+            <div class="skills-grid" id="productivityTools"></div>
+
+            <!-- 6. Interests -->
+            <h2>Interests</h2>
+            <div class="skills-grid" id="interests"></div>
+
+            <!-- 7. Soft Skills -->
+            <h2>Soft Skills</h2>
+            <div class="soft-skills">
+                <div class="soft-skill">Communication</div>
+                <div class="soft-skill">Teamwork</div>
+                <div class="soft-skill">Problem Solving</div>
+                <div class="soft-skill">Time Management</div>
+                <div class="soft-skill">Adaptability</div>
+                <div class="soft-skill">Critical Thinking</div>
+                <div class="soft-skill">Leadership</div>
+                <div class="soft-skill">Creativity</div>
+            </div>
+
+            <!-- 8. AI Tools I Use -->
+            <h2>AI Tools I Use</h2>
+            <div class="ai-tools-grid">
+                <div class="ai-tool">ChatGPT</div>
+                <div class="ai-tool">Gemini</div>
+                <div class="ai-tool">Claude</div>
+                <div class="ai-tool">Grok</div>
+                <div class="ai-tool">GitHub Copilot</div>
+                <div class="ai-tool">Leonardo AI</div>
+                <div class="ai-tool">Canva AI</div>
+                <div class="ai-tool">Figma AI</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chanthy Chet. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Backend Skills
+        const backendSkills = [
+            { name: "Backend Development", level: "80" },
+            { name: "MySQL", level: "80" },
+            { name: "Basic PHP (MVC & OOP)", level: "75" },
+            { name: "Basic Laravel", level: "75" },
+            { name: "Basic NodeJS", level: "70" },
+            { name: "Python", level: "75" },
+            { name: "Basic API", level: "80" }
+        ];
+
+        // Frontend Skills
+        const frontendSkills = [
+            { name: "HTML, CSS", level: "95" },
+            { name: "JavaScript", level: "85" },
+            { name: "Tailwind CSS, Bootstrap 5", level: "85" },
+            { name: "Basic Reach JS", level: "75" }
+        ];
+
+        // Testing Skills
+        const testingSkills = [
+            { name: "API Testing with Postman", level: "85" },
+            { name: "Bug Reporting (Jira, GitHub Board)", level: "80" },
+            { name: "STLC & Test Case Writing", level: "85" }
+        ];
+
+        // Development Tools
+        const devTools = [
+            { name: "GitHub", level: "85" },
+            { name: "AWS EC2", level: "70" },
+            { name: "Postman", level: "85" },
+            { name: "WordPress", level: "75" },
+            { name: "Netlify / Vercel", level: "85" },
+            { name: "Linux (Ubuntu)", level: "75" },
+            { name: "Docker", level: "70" }
+        ];
+
+        // Productivity Tools
+        const productivityTools = [
+            { name: "Microsoft Word", level: "90" },
+            { name: "Microsoft Excel", level: "85" },
+            { name: "Microsoft PowerPoint", level: "85" }
+        ];
+
+        // Interests
+        const interests = [
+            { name: "QA Tester", level: "85" },
+            { name: "Graphic Designer", level: "80" },
+            { name: "Web & UI/UX Design", level: "85" },
+            { name: "DevOps", level: "70" }
+        ];
+
+        function renderSkills(skillsArray, containerId) {
+            const container = document.getElementById(containerId);
+            skillsArray.forEach(skill => {
+                const div = document.createElement('div');
+                div.className = 'skill-card';
+                div.innerHTML = '<div class="skill-info"><span>' + skill.name + '</span><span>' + skill.level + '%</span></div><div class="progress-bar"><div class="progress" style="width: ' + skill.level + '%"></div></div>';
+                container.appendChild(div);
+            });
+        }
+
+        renderSkills(backendSkills, 'backendSkills');
+        renderSkills(frontendSkills, 'frontendSkills');
+        renderSkills(testingSkills, 'testingSkills');
+        renderSkills(devTools, 'devTools');
+        renderSkills(productivityTools, 'productivityTools');
+        renderSkills(interests, 'interests');
+    </script>
+</body>
+</html>
