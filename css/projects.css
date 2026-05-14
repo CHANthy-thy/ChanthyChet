@@ -270,64 +270,64 @@ footer {
 }
 
 /* Dark Mode */
-[data-theme=""dark""] body {
+[data-theme="dark"] body {
     background-color: #0f172a;
     color: #e2e8f0;
 }
 
-[data-theme=""dark""] .navbar {
+[data-theme="dark"] .navbar {
     background: rgba(15, 23, 42, 0.85);
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-[data-theme=""dark""] .logo {
+[data-theme="dark"] .logo {
     color: #f8fafc;
 }
 
-[data-theme=""dark""] .nav-links a {
+[data-theme="dark"] .nav-links a {
     color: #94a3b8;
 }
 
-[data-theme=""dark""] .nav-links a:hover,
-[data-theme=""dark""] .nav-links a.active {
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a.active {
     color: #f8fafc;
 }
 
-[data-theme=""dark""] .hamburger {
+[data-theme="dark"] .hamburger {
     color: #f8fafc;
 }
 
-[data-theme=""dark""] .projects-hero {
+[data-theme="dark"] .projects-hero {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9));
 }
 
-[data-theme=""dark""] .project-card {
+[data-theme="dark"] .project-card {
     background: #1e293b;
     border-color: rgba(255,255,255,0.1);
 }
 
-[data-theme=""dark""] .project-info h3,
-[data-theme=""dark""] .project-info p {
+[data-theme="dark"] .project-info h3,
+[data-theme="dark"] .project-info p {
     color: #e2e8f0;
 }
 
-[data-theme=""dark""] .tech-stack span {
+[data-theme="dark"] .tech-stack span {
     background: rgba(79, 70, 229, 0.3);
     color: var(--primary-light);
 }
 
-[data-theme=""dark""] .btn.live,
-[data-theme=""dark""] .btn.primary {
+[data-theme="dark"] .btn.live,
+[data-theme="dark"] .btn.primary {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
 }
 
-[data-theme=""dark""] .btn.secondary {
+[data-theme="dark"] .btn.secondary {
     background: white;
     color: var(--dark);
 }
 
-[data-theme=""dark""] footer {
+[data-theme="dark"] footer {
     background: #020617;
 }
 
@@ -353,11 +353,12 @@ footer {
     color: var(--primary);
 }
 
-[data-theme=""dark""] .theme-toggle {
+[data-theme="dark"] .theme-toggle {
     color: #f8fafc;
 }
 
-[data-theme=""dark""] .theme-toggle:hover {
+[data-theme="dark"] .theme-toggle:hover {
     background: rgba(255, 255, 255, 0.1);
     color: var(--primary-light);
 }
+
