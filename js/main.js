@@ -125,20 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll([
-        '.timeline-item',
-        '.timeline-content',
-        '.footer-col',
-        '.social-icons-top a',
-        '.btn',
-        '.info-item',
-        '.skill-card',
-        '.project-card',
-        '.about-card'
-    ].join(', ')).forEach(el => {
-        el.classList.add('animate');
-        observer.observe(el);
-    });
+    ddocument.querySelectorAll([
+    '.timeline-item',
+    '.timeline-content',
+    '.footer-col',
+    '.social-icons-top a',
+    '.btn',
+    '.info-item',
+    '.skill-card',
+    '.project-card',
+    '.about-card',
+    // About page
+    '.about-text',
+    '.about-image',
+    '.education-item',
+    '.about-text h2',
+    '.about-text h3',
+    '.about-text p'
+].join(', ')).forEach(el => {
+    el.classList.add('animate');
+    observer.observe(el);
+});
 
     // =====================
     // Navbar Scroll Shadow
@@ -169,3 +176,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('%cChanthy Chet Portfolio Loaded Successfully!', 'color:#4f46e5; font-size:14px; font-weight:bold');
 });
+// =====================
+// Particle Background (Hero)
+// =====================
+function createParticles() {
+    const hero = document.querySelector('.hero') || document.querySelector('.contact-hero') || document.querySelector('.experience-hero');
+    if (!hero) return;
+
+    for (let i = 0; i < 20; i++) {
+        const dot = document.createElement('div');
+        dot.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 8 + 4}px;
+            height: ${Math.random() * 8 + 4}px;
+            background: rgba(79, 70, 229, ${Math.random() * 0.3 + 0.1});
+            border-radius: 50%;
+            top: ${Math.random() * 100}%;
+            left: ${Math.random() * 100}%;
+            animation: floatDot ${Math.random() * 4 + 4}s ease-in-out infinite alternate;
+            pointer-events: none;
+        `;
+        hero.style.position = 'relative';
+        hero.style.overflow = 'hidden';
+        hero.appendChild(dot);
+    }
+}
+
+// =====================
+// Cursor Glow Effect
+// =====================
+function createCursorGlow() {
+    const glow = document.createElement('div');
+    glow.style.cssText = `
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: left 0.1s ease, top 0.1s ease;
+    `;
+    document.body.appendChild(glow);
+
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+}
+
+// =====================
+// Counter Animation
+// =====================
+function animateCounters() {
+    document.querySelectorAll('[data-count]').forEach(el => {
+        const target = parseInt(el.getAttribute('data-count'));
+        let count = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+            count += step;
+            if (count >= target) {
+                count = target;
+                clearInterval(timer);
+            }
+            el.textContent = count + '+';
+        }, 30);
+    });
+}
+
+// =====================
+// Floating Keyframes inject
+// =====================
+const extraStyle = document.createElement('style');
+extraStyle.textContent = `
+    @keyframes floatDot {
+        0%   { transform: translateY(0px) scale(1); opacity: 0.4; }
+        100% { transform: translateY(-30px) scale(1.3); opacity: 0.1; }
+    }
+    .nav-links a, .btn, .social-icons a, .social-icons-top a {
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .nav-links a:hover {
+        transform: translateY(-2px);
+    }
+`;
+document.head.appendChild(extraStyle);
+
+// Call them
+createParticles();
+createCursorGlow();
+animateCounters();
