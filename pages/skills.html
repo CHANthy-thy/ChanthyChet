@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">Chanthy<span>Chet</span></a>
+            <a href="../index.html" class="logo">Chanthy</a>
             <div class="nav-links" id="navLinks">
                 <a href="../index.html">Home</a>
                 <a href="about.html">About</a>
@@ -34,31 +34,36 @@
 
     <section class="skills-section">
         <div class="container">
-            <!-- 1. Backend Development -->
+
+            <!-- Backend Skills -->
             <h2>Backend Skills</h2>
             <div class="skills-grid" id="backendSkills"></div>
 
-            <!-- 2. Frontend Development -->
+            <!-- Frontend Skills -->
             <h2>Frontend Skills</h2>
             <div class="skills-grid" id="frontendSkills"></div>
 
-            <!-- 3. Testing Skills -->
+            <!-- Testing Skills -->
             <h2>Testing Skills</h2>
             <div class="skills-grid" id="testingSkills"></div>
 
-            <!-- 4. Development Tools -->
+            <!-- Development Tools -->
             <h2>Development Tools</h2>
             <div class="skills-grid" id="devTools"></div>
 
-            <!-- 5. Productivity Tools -->
-            <h2>Productivity Tools</h2>
+            <!-- Productivity & Data Tools -->
+            <h2>Productivity & Data Tools</h2>
             <div class="skills-grid" id="productivityTools"></div>
 
-            <!-- 6. Interests -->
+            <!-- UX/UI & Graphic Design -->
+            <h2>UX/UI & Graphic Design</h2>
+            <div class="skills-grid" id="designTools"></div>
+
+            <!-- Interests -->
             <h2>Interests</h2>
             <div class="skills-grid" id="interests"></div>
 
-            <!-- 7. Soft Skills -->
+            <!-- Soft Skills -->
             <h2>Soft Skills</h2>
             <div class="soft-skills">
                 <div class="soft-skill">Communication</div>
@@ -69,9 +74,10 @@
                 <div class="soft-skill">Critical Thinking</div>
                 <div class="soft-skill">Leadership</div>
                 <div class="soft-skill">Creativity</div>
+                <div class="soft-skill">Speaking / Presentation</div>
             </div>
 
-            <!-- 8. AI Tools I Use -->
+            <!-- AI Tools -->
             <h2>AI Tools I Use</h2>
             <div class="ai-tools-grid">
                 <div class="ai-tool">ChatGPT</div>
@@ -86,15 +92,15 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Chanthy Chet. Made with ❤️</p>
-        </div>
+    <!-- Footer (Same as Home) -->
+    <footer class="footer-section">
+      <!-- អ្នកអាចបិទ Footer ពី home ឬ about មកប្រើ ខ្ញុំណែនាំឱ្យប្រើ Footer ដែលស៊ីសង្វាក់គ្នា -->
     </footer>
 
     <script src="../js/main.js"></script>
     <script>
-        // Backend Skills
+        // ==================== SKILLS DATA ====================
+
         const backendSkills = [
             { name: "Backend Development", level: "80" },
             { name: "MySQL", level: "80" },
@@ -105,63 +111,170 @@
             { name: "Basic API", level: "80" }
         ];
 
-        // Frontend Skills
         const frontendSkills = [
             { name: "HTML, CSS", level: "95" },
             { name: "JavaScript", level: "85" },
             { name: "Tailwind CSS, Bootstrap 5", level: "85" },
-            { name: "Basic Reach JS", level: "75" }
+            { name: "Vue.js", level: "50" },
+            { name: "Basic React JS", level: "75" }
         ];
 
-        // Testing Skills
         const testingSkills = [
             { name: "API Testing with Postman", level: "85" },
+            { name: "Thunder Client", level: "80" },
             { name: "Bug Reporting (Jira, GitHub Board)", level: "80" },
             { name: "STLC & Test Case Writing", level: "85" }
         ];
 
-        // Development Tools
         const devTools = [
             { name: "GitHub", level: "85" },
+            { name: "MobaXterm", level: "75" },
+            { name: "Ubuntu", level: "75" },
+            { name: "VMware", level: "70" },
             { name: "AWS EC2", level: "70" },
-            { name: "Postman", level: "85" },
-            { name: "WordPress", level: "75" },
-            { name: "Netlify / Vercel", level: "85" },
-            { name: "Linux (Ubuntu)", level: "75" },
-            { name: "Docker", level: "70" }
+            { name: "Docker", level: "70" },
+            { name: "Netlify / Vercel", level: "85" }
         ];
 
-        // Productivity Tools
         const productivityTools = [
             { name: "Microsoft Word", level: "90" },
             { name: "Microsoft Excel", level: "85" },
-            { name: "Microsoft PowerPoint", level: "85" }
+            { name: "Microsoft PowerPoint", level: "85" },
+            { name: "Power BI", level: "75" },
+            { name: "Looker Studio", level: "70" }
         ];
 
-        // Interests
+        const designTools = [
+            { name: "Figma", level: "80" },
+            { name: "Canva", level: "85" },
+            { name: "UI/UX Design", level: "80" },
+            { name: "Graphic Design", level: "80" }
+        ];
+
         const interests = [
             { name: "QA Tester", level: "85" },
-            { name: "Graphic Designer", level: "80" },
             { name: "Web & UI/UX Design", level: "85" },
-            { name: "DevOps", level: "70" }
+            { name: "DevOps", level: "70" },
+            { name: "IT Sales", level: "75" }
         ];
 
         function renderSkills(skillsArray, containerId) {
             const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Clear previous
             skillsArray.forEach(skill => {
                 const div = document.createElement('div');
                 div.className = 'skill-card';
-                div.innerHTML = '<div class="skill-info"><span>' + skill.name + '</span><span>' + skill.level + '%</span></div><div class="progress-bar"><div class="progress" style="width: ' + skill.level + '%"></div></div>';
+                div.innerHTML = `
+                    <div class="skill-info">
+                        <span>${skill.name}</span>
+                        <span>${skill.level}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: ${skill.level}%"></div>
+                    </div>
+                `;
                 container.appendChild(div);
             });
         }
 
+        // Render all skills
         renderSkills(backendSkills, 'backendSkills');
         renderSkills(frontendSkills, 'frontendSkills');
         renderSkills(testingSkills, 'testingSkills');
         renderSkills(devTools, 'devTools');
         renderSkills(productivityTools, 'productivityTools');
+        renderSkills(designTools, 'designTools');
         renderSkills(interests, 'interests');
     </script>
+     <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            
+            <!-- Top Section -->
+            <div class="footer-top">
+                <!-- About Me -->
+                <div class="footer-col">
+                    <h3>About Me</h3>
+                    <p>I'm Chanthy Chet, a passionate frontend web developer specializing in creating modern and responsive websites. I love coding, design, and making the web beautiful and functional.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">• Home</a></li>
+                        <li><a href="about.html">• About</a></li>
+                        <li><a href="skills.html">• Skills</a></li>
+                        <li><a href="projects.html">• Projects</a></li>
+                        <li><a href="contact.html">• Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><span>Email:</span> <a href="mailto:cthy4313@gmail.com">cthy4313@gmail.com</a></li>
+                        <li><span>Phone:</span> +855 86 663 272</li>
+                        <li><span>Location:</span> Phnom Penh, Cambodia</li>
+                    </ul>
+                </div>
+
+                <!-- Follow Me -->
+                <div class="footer-col">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/CHANthy-thy" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chanthy-chet-0b4408387" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/85586663272" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Web Developer</li>
+                        <li>Graphic Design</li>
+                        <li>UI/UX Design</li>
+                        <li>QA Tester</li>
+                        <li>Project Manager</li>
+                    </ul>
+                </div>
+
+                <!-- Skills -->
+                <div class="footer-col">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Responsive Design</li>
+                        <li>Git & Version Control</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col newsletter-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest updates and news.</p>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2025 Chanthy Chet. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

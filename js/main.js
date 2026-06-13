@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // =====================
     // Mobile Menu
+    // =====================
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
@@ -12,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // =====================
     // Active Nav Link
+    // =====================
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
         if (link.getAttribute('href').endsWith(currentPath)) {
@@ -20,11 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // =====================
     // Dark Mode Toggle
+    // =====================
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
 
-    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         root.setAttribute('data-theme', savedTheme);
@@ -45,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateThemeIcon(theme) {
+        if (!themeToggle) return;
         const icon = themeToggle.querySelector('i');
         if (theme === 'dark') {
             icon.classList.remove('fa-moon');
@@ -55,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Form Validation (for contact page)
+    // =====================
+    // Contact Form
+    // =====================
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -65,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typed.js Initialization
+    // =====================
+    // Typed.js
+    // =====================
     const typedTextElement = document.querySelector('.typed-text');
     if (typedTextElement) {
         new Typed('.typed-text', {
@@ -86,6 +97,75 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: true
         });
     }
+
+    // =====================
+    // Scroll Animations
+    // =====================
+    const style = document.createElement('style');
+    style.textContent = `
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, i * 100);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll([
+        '.timeline-item',
+        '.timeline-content',
+        '.footer-col',
+        '.social-icons-top a',
+        '.btn',
+        '.info-item',
+        '.skill-card',
+        '.project-card',
+        '.about-card'
+    ].join(', ')).forEach(el => {
+        el.classList.add('animate');
+        observer.observe(el);
+    });
+
+    // =====================
+    // Navbar Scroll Shadow
+    // =====================
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    }
+
+    // =====================
+    // Smooth Scroll for Anchor Links
+    // =====================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
     console.log('%cChanthy Chet Portfolio Loaded Successfully!', 'color:#4f46e5; font-size:14px; font-weight:bold');
 });

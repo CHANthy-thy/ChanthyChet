@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">Chanthy<span>Chet</span></a>
+            <a href="../index.html" class="logo">Chanthy</a>
             <div class="nav-links" id="navLinks">
                 <a href="../index.html">Home</a>
                 <a href="about.html">About</a>
@@ -25,16 +25,52 @@
         </div>
     </nav>
 
-    <section class="projects-hero">
-        <div class="container">
-            <h1>My Projects</h1>
-            <p>Here are some of my recent works as a Web Development Student</p>
-        </div>
-    </section>
+
 
     <section class="projects-section">
         <div class="container">
             <div class="projects-grid">
+
+                <!-- Product Management System (Laravel + Vue.js) -->
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3>Product Management System (CRUD)</h3>
+                        <p>Full-stack CRUD application with Laravel backend and Vue.js frontend for managing products, categories, and inventory.</p>
+                        <div class="tech-stack">
+                            <span>Laravel</span>
+                            <span>Vue.js</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CHANthy-thy/backend-product" target="_blank" class="btn github">
+                                <i class="fab fa-github"></i> Backend (Laravel)
+                            </a>
+                            <a href="https://github.com/CHANthy-thy/fronted-product" target="_blank" class="btn github">
+                                <i class="fab fa-github"></i> Frontend (Vue.js)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Project - Node.js Restaurant (Placed at the top) -->
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3>Restaurant Management System (Node.js)</h3>
+                        <p>Full-stack restaurant management system built with Node.js, Express, and MySQL.</p>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Yahoo-football/Node_Project_Restaurants" target="_blank" class="btn github">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Project 1 -->
                 <div class="project-card">
@@ -81,7 +117,6 @@
                         </div>
                         <div class="project-links">
                             <a href="https://javascript-project-task.vercel.app/#" target="_blank" class="btn live">Live Demo</a>
-                            <a href="#" target="_blank" class="btn github"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -153,9 +188,94 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Chanthy Chet. Made with ❤️</p>
+     <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            
+            <!-- Top Section -->
+            <div class="footer-top">
+                <!-- About Me -->
+                <div class="footer-col">
+                    <h3>About Me</h3>
+                    <p>I'm Chanthy Chet, a passionate frontend web developer specializing in creating modern and responsive websites. I love coding, design, and making the web beautiful and functional.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">• Home</a></li>
+                        <li><a href="about.html">• About</a></li>
+                        <li><a href="skills.html">• Skills</a></li>
+                        <li><a href="projects.html">• Projects</a></li>
+                        <li><a href="contact.html">• Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><span>Email:</span> <a href="mailto:cthy4313@gmail.com">cthy4313@gmail.com</a></li>
+                        <li><span>Phone:</span> +855 86 663 272</li>
+                        <li><span>Location:</span> Phnom Penh, Cambodia</li>
+                    </ul>
+                </div>
+
+                <!-- Follow Me -->
+                <div class="footer-col">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/CHANthy-thy" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chanthy-chet-0b4408387" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/85586663272" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Web Developer</li>
+                        <li>Graphic Design</li>
+                        <li>UI/UX Design</li>
+                        <li>QA Tester</li>
+                        <li>Project Manager</li>
+                    </ul>
+                </div>
+
+                <!-- Skills -->
+                <div class="footer-col">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Responsive Design</li>
+                        <li>Git & Version Control</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col newsletter-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest updates and news.</p>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2025 Chanthy Chet. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
