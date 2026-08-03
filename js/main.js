@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typedTextElement) {
         new Typed('.typed-text', {
             strings: [
-                'Frontend Development',
-                'Web Development',
+                'Frontend Developer',
+                'Web Developer',
                 'UI/UX Design',
                 'Graphic Design',
                 'Poster Design',
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.15 });
 
-    ddocument.querySelectorAll([
+    document.querySelectorAll([
     '.timeline-item',
     '.timeline-content',
     '.footer-col',
@@ -141,7 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
     '.education-item',
     '.about-text h2',
     '.about-text h3',
-    '.about-text p'
+    '.about-text p',
+    // Additional elements
+    '.soft-skill',
+    '.ai-tool',
+    '.project-image',
+    '.project-info',
+    '.skills-hero',
+    '.projects-hero',
+    '.experience-hero',
+    '.contact-hero',
+    '.about-hero',
+    'h2',
+    '.tech-stack',
+    '.hero-buttons',
+    '.social-links',
+    '.intro'
 ].join(', ')).forEach(el => {
     el.classList.add('animate');
     observer.observe(el);

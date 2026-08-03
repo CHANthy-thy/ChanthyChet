@@ -18,7 +18,7 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    line-height: 1.7;
+    line-height: 1.75;
     color: #334155;
     background-color: var(--light);
 }
@@ -97,6 +97,25 @@ body {
     color: var(--dark);
 }
 
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(79, 70, 229, 0.1);
+}
+
 /* Hero */
 .projects-hero {
     background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));
@@ -114,6 +133,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeInUp 0.8s ease forwards;
+    letter-spacing: -0.02em;
 }
 
 /* Projects Grid */
@@ -137,14 +157,14 @@ body {
     background: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0,0,0,0.02);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .project-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .project-image {
@@ -172,6 +192,7 @@ body {
     margin-bottom: 1rem;
     color: var(--dark);
     font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .project-info p {
@@ -235,6 +256,82 @@ body {
     border-color: var(--dark);
     background: var(--dark);
     color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .projects-hero {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(236, 72, 153, 0.15));
+}
+
+[data-theme="dark"] .projects-section {
+    background: #0f172a;
+}
+
+[data-theme="dark"] .project-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .project-image {
+    background: #0f172a;
+}
+
+[data-theme="dark"] .btn.github {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+[data-theme="dark"] .btn.github:hover {
+    background: #0f172a;
+    color: white;
+    border-color: #0f172a;
+}
+
+/* Dark Mode */
+[data-theme="dark"] body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid #1e293b;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .logo {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .hamburger {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .project-info h3 {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .project-info p {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .tech-stack span {
+    color: #a5b4fc;
 }
 
 /* ==================== FOOTER ==================== */
@@ -346,6 +443,8 @@ body {
 
 .newsletter-col button:hover {
     background: #67e8f9;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 /* Divider */
@@ -365,8 +464,11 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .footer-section {
         padding: 60px 0 40px;
+    }
+    .nav-links.active {
+        display: flex;
     }
 }
